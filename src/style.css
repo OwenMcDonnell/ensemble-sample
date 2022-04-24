@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+}
+
+body {
+  margin: 0;
+  background-color: #aaa4da;
+  background-image: url(./assets/dlf.pt-film-strip-png-100000.png);
+  background-size: 700px 150px;
+  background-repeat: no-repeat;
+  font-family: Verdana, sans-serif;
+}
+
+.search-container {
+  margin-top: 200px;
+}
+
+label {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+input {
+  margin-right: 20px;
+}
