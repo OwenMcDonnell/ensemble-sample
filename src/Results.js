@@ -7,7 +7,7 @@ const Results = (props) => {
         <h1>No matching films found! {props.errorMessage}</h1>
       ) : (
         props.films.map((f) => {
-          return <Film title={f.Title} director={f.Year} />;
+          return <Film title={f.Title} year={f.Year} poster={f.Poster} />;
         })
       )}
     </div>
