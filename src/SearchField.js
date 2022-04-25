@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Results from "./Results";
 
 const SearchField = (props) => {
-  const [search, setSearch] = useState("Film Title");
+  const [search, setSearch] = useState("Search");
   const [films, setFilms] = useState([]);
   const [searchType, setSearchType] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -37,23 +37,25 @@ const SearchField = (props) => {
   };
 
   return (
-    <div className="search-field">
+    <div className="search-field w-10/12 mx-auto">
       <form
+        className="search-field p-12 mb-12 rounded-md bg-slate-500 
+          shadow-md flex justify-center items-center"
         onSubmit={(e) => {
           e.preventDefault();
           searchFilms();
         }}
       >
-        <label htmlFor="title">Title </label>
         <input
           id="title"
           onChange={searchChange}
           value={search}
           placeholder=""
         />
-        <label htmlFor="search-type">
-          Search By:
+        <label htmlFor="search-type" className="p-5">
+          Search By: &nbsp;
           <select
+            className="space-x-4"
             id="search-type"
             value={searchType}
             onChange={(e) => setSearchType(e.target.value)}
@@ -68,7 +70,9 @@ const SearchField = (props) => {
           </select>
         </label>
 
-        <button>Search</button>
+        <button className="bg-white hover:bg-gray-100 text-gray-800 font-bold border-gray-400 p-2 shadow rounded">
+          Search
+        </button>
       </form>
 
       <Results errorMessage={errorMessage} films={films} />
